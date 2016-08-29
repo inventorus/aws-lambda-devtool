@@ -1,0 +1,25 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : ["airbnb/base"],
+  "rules": {
+    // Soft some rules.
+    "comma-dangle": 0, // Nobody cares about commas.
+    "no-throw-literal": 0, // Good way of throwing errors in functions
+    "consistent-return": 0, // Returns are usefull to stop function processing
+    "default-case": 0, // Required default case is nonsense.
+    "new-cap": [2, {"capIsNew": false, "newIsCap": true}], // For Record() etc.
+    "no-confusing-arrow": 0, // No, this is not confusing.
+    "no-shadow": 0, // Shadowing is a nice language feature. Naming is hard.
+  },
+  "settings": {
+    "import/ignore": [
+      "node_modules"
+    ],
+    "import/parser": "babel-eslint",
+    "import/resolve": {
+      "extensions": [
+        ".js"
+      ]
+    }
+  }
+}
