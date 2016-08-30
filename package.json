@@ -1,9 +1,25 @@
 {
-  "name": "@ithipsters/inventorus-lambda",
-  "author": "Inventorus",
-  "version": "0.1.0",
+  "name": "@inventorus/aws-lambda-devtool",
   "description": "Tool which helps to develop, test and deploy AWS Lambda functions written in Babel.js",
-  "main": "gulpfile.babel.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/inventorus/aws-lambda-devtool",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name" : "Inventorus",
+    "email" : "contact@inventorus.com",
+    "url" : "https://inventorus.com"
+  },
+  "contributors": [
+    {
+      "name" : "Filip Pyrek",
+      "email" : "PyrekFilip@gmail.com",
+      "url" : "http://filippyrek.cz"
+    }
+  ],
+  "engines": {
+    "node" : ">=6.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:inventorus/aws-lambda-devtool.git"
@@ -11,22 +27,22 @@
   "dependencies": {
     "aws-sdk": "^2.3.9",
     "aws-sdk-promise": "^0.0.2",
-    "babel-core": "^6.8.0",
-    "babel-eslint": "^6.0.4",
-    "babel-plugin-add-module-exports": "^0.2.0",
-    "babel-plugin-transform-runtime": "^6.8.0",
-    "babel-polyfill": "^6.8.0",
-    "babel-preset-es2015": "^6.3.13",
+    "babel-core": "^6.13.2",
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.13.2",
     "babel-preset-es2015-node6": "^0.3.0",
-    "babel-preset-stage-1": "^6.3.13",
-    "babel-register": "^6.8.0",
-    "babel-runtime": "^6.3.19",
+    "babel-preset-stage-1": "^6.13.0",
+    "babel-register": "^6.11.6",
+    "babel-runtime": "^6.11.6",
     "bluebird": "^3.3.5",
-    "eslint": "^2.9.0",
+    "eslint": "^3.4.0",
     "eslint-config-airbnb": "^10.0.1",
-    "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-import": "^1.7.0",
-    "eslint-plugin-standard": "^1.3.1",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-standard": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.7",
     "immutable": "^3.8.1",
