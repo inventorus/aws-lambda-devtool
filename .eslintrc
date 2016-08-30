@@ -3,6 +3,7 @@
   "extends" : ["airbnb/base"],
   "rules": {
     // Soft some rules.
+    "generator-star-spacing": 0, // Workaround: https://github.com/babel/babel-eslint/issues/316
     "comma-dangle": 0, // Nobody cares about commas.
     "no-throw-literal": 0, // Good way of throwing errors in functions
     "consistent-return": 0, // Returns are usefull to stop function processing

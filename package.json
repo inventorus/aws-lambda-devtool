@@ -6,19 +6,19 @@
   "license": "MIT",
   "private": true,
   "author": {
-    "name" : "Inventorus",
-    "email" : "contact@inventorus.com",
-    "url" : "https://inventorus.com"
+    "name": "Inventorus",
+    "email": "contact@inventorus.com",
+    "url": "https://inventorus.com"
   },
   "contributors": [
     {
-      "name" : "Filip Pyrek",
-      "email" : "PyrekFilip@gmail.com",
-      "url" : "http://filippyrek.cz"
+      "name": "Filip Pyrek",
+      "email": "PyrekFilip@gmail.com",
+      "url": "http://filippyrek.cz"
     }
   ],
   "engines": {
-    "node" : ">=6.0.0"
+    "node": ">=6.0.0"
   },
   "repository": {
     "type": "git",
@@ -38,15 +38,19 @@
     "babel-register": "^6.11.6",
     "babel-runtime": "^6.11.6",
     "bluebird": "^3.3.5",
+    "child-process-promise": "^2.1.3",
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-standard": "^2.0.0",
+    "fs-promise": "^0.5.0",
+    "glob": "^7.0.6",
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.7",
     "immutable": "^3.8.1",
     "nconf": "^0.8.4",
+    "node-uuid": "^1.4.7",
     "run-sequence": "^1.1.5",
     "uglify-js": "^2.6.2",
     "yargs": "^5.0.0"
