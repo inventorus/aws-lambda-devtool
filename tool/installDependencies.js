@@ -3,7 +3,6 @@ import path from 'path';
 import Promise from 'bluebird';
 import gutil, { colors } from 'gulp-util';
 import fsp from 'fs-promise';
-import { Map } from 'immutable';
 import uuid from 'node-uuid';
 
 const logError = (folder, err) => {
@@ -14,8 +13,6 @@ const logError = (folder, err) => {
 
 export default async function installDependencies(args) {
   const { cwd, folders, libraries, logging = true, runParallel = true } = args;
-
-  const libs = libraries.reduce((libs, lib) => libs.set(path.basename(lib), lib), Map()).toJS();
 
   const log = (folder, eventType, promise) => {
     if (logging) {
@@ -37,20 +34,20 @@ export default async function installDependencies(args) {
 
   const run = async (folder) => {
     const {
-      libraryDependencies = []
+      localDependencies = []
     } = JSON.parse(await fsp.readFile(path.join(folder, 'package.json')));
 
     await Promise.all(
-      libraryDependencies
+      localDependencies
       .map((lib) => {
-        logError(folder, `${lib} requested in ${folder}`);
+        if (!libraries.has(lib)) logError(folder, `${lib} requested in ${folder}`);
         return lib;
       })
       .map((lib) =>
         log(`${lib}__${folder}`, 'LIB',
           spawn('npm', [
             'link',
-            path.relative(path.join(cwd, folder), path.join(cwd, libs[lib]))
+            path.relative(path.join(cwd, folder), path.join(cwd, libraries.get(lib)))
           ], {
             cwd: path.join(cwd, folder)
           })

@@ -5,6 +5,7 @@ import config from './config';
 import installDependencies from './tool/installDependencies';
 import getFunctionFolders from './tool/getFunctionFolders';
 import getLibraryFolders from './tool/getLibraryFolders';
+import getFunctionChecksum from './tool/getFunctionChecksum';
 
 gulp.task('default', () => {
   gutil.log(config);
@@ -35,4 +36,23 @@ gulp.task('ifd', async () => { // install function dependencies
     folders,
     libraries
   });
+});
+
+gulp.task('gfd', async () => { // get function data
+  const folders = await getFunctionFolders({
+    rootFolder: 'src'
+  });
+  const libraries = await getLibraryFolders({
+    rootFolder: 'lib'
+  });
+  const colors = gutil.colors;
+  for (const folder of folders) {
+    gutil.log(
+      colors.bold(colors.bgBlack(colors.white(folder))),
+      await getFunctionChecksum({
+        folder,
+        libraries
+      })
+    );
+  }
 });
